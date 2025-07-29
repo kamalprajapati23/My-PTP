@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kamal Prajapati - Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background: #f8f9fa;
+            overflow-x: hidden !important;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        /* HERO SECTION */
+        .home {
+            background: white;
+            color: white;
+            padding: 60px 0;
+            box-shadow: inset 15px 15px 25px yellow;
+            border-radius: 20px;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px;
+            background: black;
+            border: 5px solid yellow;
+            box-shadow: inset 15px 15px 25px rebeccapurple;
+            border-radius: 20px;
+            overflow-x: hidden;
+        }
+
+        .left h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .typewriter {
+            font-size: 24px;
+            color: #00ff7f;
+            min-height: 30px;
+            font-weight: 600;
+            margin: 15px 0;
+        }
+
+        .typewriter .typed-text::after {
+            content: "|";
+            animation: blink 0.7s infinite;
+            color: #00ff7f;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .left p {
+            font-size: 16px;
+            color: #ccc;
+            max-width: 500px;
+        }
+
+        .btn {
+            background: #00ff7f;
+            color: #111;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #00cc66;
+        }
+
+        .icons a {
+            text-decoration: none;
+            color: #00ff7f;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+
+        .image-border {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: -20px;
+        }
+
+        .image-border::before,
+        .image-border::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 4px solid transparent;
+            border-top: 4px solid #00ff7f;
+            border-radius: 50%;
+            animation: spin 4s linear infinite;
+        }
+
+        .image-border::after {
+            border-top-color: transparent;
+            border-bottom: 4px solid #00ff7f;
+            animation-direction: reverse;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .image-border img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #00ff7f;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .left h1 {
+                font-size: 36px;
+            }
+
+            .typewriter {
+                font-size: 20px;
+            }
+
+            .image-border {
+                margin-bottom: 20px;
+            }
+        }
+
+        #skills,
+        #projects,
+        #contact {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .skill-box {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .project-card {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #00ff7f;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HERO SECTION -->
+    <section class="home">
+        <div class="hero-container">
+            <div class="left">
+                <h1>KAMAL PRAJAPATI</h1>
+                <div class="typewriter">I'M A <span class="typed-text"></span></div>
+                <p>
+                <p>
+                    I’m a MERN Stack Developer trained at <strong>Techpile Technology Pvt. Ltd.</strong>, where I
+                    completed a 6-month Apprenticeship in full-stack web development. I have hands-on experience with
+                    <strong>MongoDB</strong>, <strong>Express.js</strong>, <strong>React.js</strong>, and
+                    <strong>Node.js</strong>, along with HTML, CSS, Bootstrap, JavaScript, and C. I enjoy creating
+                    clean, responsive websites and solving real-world problems through code.
+                </p>
+
+                </p>
+                <a href="Resum.pdf"><button class="btn">Download CV</button></a>
+                <div class="icons mt-3">
+                    <a href="https://www.linkedin.com/in/kamal-prajapati-5a9914325">LinkedIn</a>
+                    <a href="https://www.github.com/kamalprajapati23">GitHub</a>
+                    <a href="https://www.facebook.com/share/16QdwXs4cj/">Facebook</a>
+                    <a href="https://www.instagram.com/kamal624462">Instagram</a>
+                    <a href="https://www.whatsapp.com/+918765077981">Whatsapp</a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="image-border">
+                    <img src="./images/kamal2.jpg" alt="Kamal Prajapati" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="bg-light py-5">
+        <div class="container">
+            <h2 class="section-title">
+                <span style="color: #007bff;">About</span>
+                <span style="color: #e91e63;">Me</span>
+            </h2>
+
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Hello! I'm <strong>Kamal Prajapati</strong>, a highly motivated and detail-oriented
+                        <span class="highlight">MERN Stack Developer</span> with a strong passion for building dynamic
+                        and scalable web applications.
+                        I have successfully completed my Apprenticeship Training at <strong>Techpile
+                            Technology</strong>,
+                        where I gained hands-on experience in designing and developing full-stack applications.
+                        <br /><br />
+                        My core expertise includes modern technologies like <strong>React.js</strong> for frontend
+                        development,
+                        <strong>Node.js</strong> and <strong>Express.js</strong> for backend services, and
+                        <strong>MongoDB</strong> for efficient data handling. I take pride in writing clean, efficient
+                        code and following best practices to deliver responsive and user-friendly applications.
+                        <br /><br />
+                        I’m a quick learner, always excited to explore emerging technologies and tools.
+                        I thrive in collaborative environments and enjoy turning ideas into digital solutions
+                        that make an impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">
+                <span style="color: #ff9800;">My</span>
+                <span style="color: #4caf50;">Skills</span>
+            </h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">HTML</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">CSS</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">JavaScript</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">Bootstrap</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">React.js</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">Node.js</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">Express.js</div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">MongoDB</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Education Section -->
+    <!-- Education Section -->
+    <section id="education" class="bg-white py-5">
+        <div class="container">
+            <h2 class="section-title">
+                <span style="color: #3f51b5;">My</span>
+                <span style="color: #f44336;">Education</span>
+            </h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">
+                        <h5>High School</h5>
+                        <p class="text-muted mb-0">2017 - 2018</p>
+                        <p class="mb-0">Kisan Inter College,Pali Road Sikarara, Ajoshi, Jaunpur</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">
+                        <h5>Intermediate</h5>
+                        <p class="text-muted mb-0">2018 - 2020</p>
+                        <p class="mb-0">Subhash Chandra Bose Academy Inter College, II.M Road, Lucknow</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">
+                        <h5>BCA</h5>
+                        <p class="text-muted mb-0">2021 - 2024</p>
+                        <p class="mb-0">Veer Bahadur Singh Purvanchal University, Shahganj Road Jaunpur </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="skill-box bg-warning">
+                        <h5>MCA</h5>
+                        <p class="text-muted mb-0">2025 (Pursuing)</p>
+                        <p class="mb-0">Maharishi University ,information Technology ,II.M Road, Lucknow</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Technical Hobbies Section -->
+    <section id="technical-hobbies" class="bg-light py-5">
+        <div class="container">
+            <h2 class="section-title">
+                <span style="color:magenta;">My</span>
+                <span style="color:aqua"> Hobbies</span>
+            </h2>
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-box text-center bg-warning">
+                        <i class="fas fa-laptop-code fa-2x mb-2 text-primary"></i>
+                        <h6 class="fw-bold">Building Web Projects</h6>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-box text-center bg-warning">
+                        <i class="fas fa-code fa-2x mb-2 text-success"></i>
+                        <h6 class="fw-bold">Competitive Programming</h6>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-box text-center bg-warning">
+                        <i class="fas fa-brain fa-2x mb-2 text-danger"></i>
+                        <h6 class="fw-bold">Learning New Technologies</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Strengths Section -->
+    <section id="strengths" class="bg-white py-5">
+        <div class="container">
+            <h2 class="section-title">
+                <span style="color:green;">My</span>
+                <span style="color: #f44336;">Strengths</span>
+            </h2>
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-box text-center bg-warning">
+                        <i class="fas fa-brain fa-2x mb-2 text-primary"></i>
+                        <h6 class="fw-bold">Problem Solving</h6>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-box text-center bg-warning">
+                        <i class="fas fa-users fa-2x mb-2 text-success"></i>
+                        <h6 class="fw-bold">Team Work</h6>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-box text-center bg-warning">
+                        <i class="fas fa-clock fa-2x mb-2 text-warning"></i>
+                        <h6 class="fw-bold">Time Management</h6>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-box text-center bg-warning">
+                        <i class="fas fa-lightbulb fa-2x mb-2 text-danger"></i>
+                        <h6 class="fw-bold">Quick Learner</h6>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-box text-center bg-warning">
+                        <i class="fas fa-magic fa-2x mb-2 text-info"></i>
+                        <h6 class="fw-bold">Adaptability</h6>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="skill-box text-center bg-warning">
+                        <i class="fas fa-fire fa-2x mb-2 text-secondary"></i>
+                        <h6 class="fw-bold">Self-Motivated</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span style="color: #03a9f4;">My</span>
+                <span style="color: #e91e63;">Projects</span>
+            </h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="./images/image1.jpg" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">🏦SwiftBank | Digital Banking System</h5>
+                            <p class="card-text">A full-stack digital banking application built with MERN Stack. Includes account opening, balance check, credit, withdraw, and mini statement with responsive UI and secure verification..</p>
+                            <a href="https://swiftbank3.netlify.app/" class="btn btn-primary" target="_blank">View
+                                Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="./images/image2.jpg" class="card-img-top" alt="CRUD App">
+                        <div class="card-body">
+                            <h5 class="card-title">⚡Electrician Company Website</h5>
+                            <p class="card-text">A complete website for managing electrician tenders, vacancies, resignations, and attendance with a modern, responsive design..</p>
+                            <a href="https://eletricapro.netlify.app/" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="./images/image3.jpg" class="card-img-top" alt="Weather App">
+                        <div class="card-body">
+                            <h5 class="card-title">Weather App</h5>
+                            <p class="card-text">Weather information app using OpenWeather API.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="./images/image4.jpg" class="card-img-top" alt="Age Calculator">
+                        <div class="card-body">
+                            <h5 class="card-title">Age Calculator</h5>
+                            <p class="card-text">A simple Age Calculator built with MERN Stack to calculate age from
+                                date of birth.</p>
+                            <a href="http://relaxed-sundae-2a77aa.netlify.app" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="./images/image5.jpg" class="card-img-top" alt="Digital Watch">
+                        <div class="card-body">
+                            <h5 class="card-title">Digital Watch</h5>
+                            <p class="card-text">A real-time digital watch created using the MERN Stack for time
+                                tracking practice.</p>
+                            <a href="http://magical-belekoy-5e5cfb.netlify.app" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="./images/image6.jpg" class="card-img-top" alt="CRUD App">
+                        <div class="card-body">
+                            <h5 class="card-title">CRUD App</h5>
+                            <p class="card-text">Simple CRUD using MERN Stack for learning purpose.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="./images/image7.jpeg" class="card-img-top" alt="CRUD App">
+                        <div class="card-body">
+                            <h5 class="card-title">CRUD App</h5>
+                            <p class="card-text">Simple CRUD using MERN Stack for learning purpose.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="./images/image8.jpg" class="card-img-top" alt="CRUD App">
+                        <div class="card-body">
+                            <h5 class="card-title">CRUD App</h5>
+                            <p class="card-text">Simple CRUD using MERN Stack for learning purpose.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="./images/image9.jpg" class="card-img-top" alt="CRUD App">
+                        <div class="card-body">
+                            <h5 class="card-title">CRUD App</h5>
+                            <p class="card-text">Simple CRUD using MERN Stack for learning purpose.</p>
+                            <a href="#" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">
+                <span style="color: #009688;">Contact</span>
+                <span style="color: #ff5722;">Me</span>
+            </h2>
+            <form class="contact-form" action="#" method="post">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-5 mt-5">
+        <div class="container">
+            <h4 class="mb-3">🚀 Let’s Build Something Amazing Together!</h4>
+            <p class="mb-3">
+                👨‍💻 Hi, I'm <strong>Kamal Prajapati</strong> — a passionate Frontend & MERN Stack Developer from Uttar
+                Pradesh.<br>
+                I craft responsive UIs, integrate powerful APIs, and write clean, scalable code.💡
+            </p>
+            <div class="d-flex justify-content-center gap-4 fs-4 mb-4">
+                <a href="https://www.linkedin.com/in/kamal" target="_blank" class="text-white" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i> 🔗
+                </a>
+                <a href="https://github.com/kamalprajapati23" target="_blank" class="text-white" title="GitHub">
+                    <i class="fab fa-github"></i> 💻
+                </a>
+                <a href="mailto:kamal@example.com" class="text-white" title="Email">
+                    <i class="fas fa-envelope"></i> 📧
+                </a>
+                <a href="https://wa.me/918765077981" class="text-white" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i> 📱
+                </a>
+                <a href="https://instagram.com/kamal624462" class="text-white" title="Instagram">
+                    <i class="fab fa-instagram"></i> 📸
+                </a>
+            </div>
+            <hr class="bg-white mx-auto" style="width: 60%;" />
+            <p class="small fst-italic mb-2">
+                “🔧 Turning complex logic into seamless user experiences — One component at a time.”<br>
+                💻 Tech Stack: HTML | CSS | JavaScript | React | Node.js | MongoDB | Git | Bootstrap
+            </p>
+            <p class="small mb-0">&copy; 2025 <strong>Kamal Prajapati</strong> | All rights reserved 🛡️</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const roles = ["Frontend Developer", "Mern Stack Developer", "UI Designer"];
+
+        const typedTextSpan = document.querySelector(".typed-text");
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const currentText = roles[roleIndex];
+
+            if (isDeleting) {
+                charIndex--;
+            } else {
+                charIndex++;
+            }
+
+            typedTextSpan.textContent = currentText.substring(0, charIndex);
+
+            if (!isDeleting && charIndex === currentText.length) {
+                setTimeout(() => {
+                    isDeleting = true;
+                    typeEffect();
+                }, 1000); // Pause after complete typing
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                setTimeout(typeEffect, 300); // Pause before new word starts
+            } else {
+                setTimeout(typeEffect, isDeleting ? 60 : 120); // Typing/deleting speed
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(typeEffect, 800);
+        });
+    </script>
+
+
+</body>
+
+</html>
